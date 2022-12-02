@@ -1,5 +1,16 @@
+/* eslint-disable react/react-in-jsx-scope */
 import {Component} from 'react';
-import {Button, StyleSheet} from 'react-native';
+import {Text, StyleSheet, Image, View, TouchableOpacity} from 'react-native';
+import ES from '../styles/essentialsStyle';
+
+function ButtonInner({props}) {
+  return (
+    <View style={styles.viewContainer}>
+      <Image style={styles.innerImage} source={{uri: props.img}} />
+      <Text style={[ES.text, styles.innerTextContent]}>{props.title}</Text>
+    </View>
+  );
+}
 
 class PageButton extends Component {
   constructor(props) {
@@ -13,11 +24,14 @@ class PageButton extends Component {
 
   render() {
     return (
-      // eslint-disable-next-line react/react-in-jsx-scope
-      <Button
-        color={styles.container.backgroundColor}
-        title={this.props.title}
-      />
+      <TouchableOpacity
+        activeOpacity={0.8}
+        style={styles.container}
+        onPress={() => {
+          console.log('Pressed');
+        }}>
+        <ButtonInner props={this.props} />
+      </TouchableOpacity>
     );
   }
 }
@@ -25,6 +39,23 @@ class PageButton extends Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#2a2b2c',
+    borderRadius: 10,
+    height: 50,
+    marginBottom: 5,
+  },
+  viewContainer: {
+    flexDirection: 'row',
+  },
+  innerTextContent: {
+    marginTop: 13,
+    marginLeft: 10,
+    fontSize: 16,
+  },
+  innerImage: {
+    marginLeft: 4,
+    marginTop: 13,
+    height: 18,
+    width: 18,
   },
 });
 
