@@ -14,5 +14,8 @@ const styles = StyleSheet.create({
     color: '#1296db',
     fontSize: 32,
   },
+  sameRow: {
+    flexDirection: 'row',
+  },
 });
 export default styles;
