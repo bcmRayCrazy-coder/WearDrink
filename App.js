@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import MainPage from './view/pages/MainPage';
 import MenuPage from './view/pages/MenuPage';
+import SettingsPage from './view/pages/SettingsPage';
+import AboutPage from './view/pages/AboutPage';
+import SkinPage from './view/pages/SkinPage';
+
 import {log} from './lib/logger';
+import Header from './view/components/Header';
 
 class App extends Component {
   Stack = createNativeStackNavigator();
@@ -16,22 +20,36 @@ class App extends Component {
   render() {
     return (
       <NavigationContainer>
-        <SafeAreaView style={styles.container}>
-          <this.Stack.Navigator initialRouteName="Main">
-            <this.Stack.Screen name="Main" component={MainPage} />
-            <this.Stack.Screen name="Menu" component={MenuPage} />
-          </this.Stack.Navigator>
-        </SafeAreaView>
+        <this.Stack.Navigator initialRouteName="Main">
+          <this.Stack.Screen
+            name="Main"
+            component={MainPage}
+            options={{header: props => <Header {...props} />}}
+          />
+          <this.Stack.Screen
+            name="Menu"
+            component={MenuPage}
+            options={{header: props => <Header {...props} />}}
+          />
+          <this.Stack.Screen
+            name="Settings"
+            component={SettingsPage}
+            options={{header: props => <Header {...props} />}}
+          />
+          <this.Stack.Screen
+            name="Skin"
+            component={SkinPage}
+            options={{header: props => <Header {...props} />}}
+          />
+          <this.Stack.Screen
+            name="About"
+            component={AboutPage}
+            options={{header: props => <Header {...props} />}}
+          />
+        </this.Stack.Navigator>
       </NavigationContainer>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#000000',
-    marginBottom: 10,
-  },
-});
 
 export default App;

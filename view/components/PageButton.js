@@ -2,6 +2,7 @@
 import {Component} from 'react';
 import {Text, StyleSheet, Image, View, TouchableOpacity} from 'react-native';
 import ES from '../styles/essentialsStyle';
+import {log} from '../../lib/logger';
 
 function ButtonInner({props}) {
   return (
@@ -28,7 +29,9 @@ class PageButton extends Component {
         activeOpacity={0.8}
         style={styles.container}
         onPress={() => {
-          console.log('Pressed');
+          this.props.onPress
+            ? this.props.onPress()
+            : log('Page Button pressed without handler!');
         }}>
         <ButtonInner props={this.props} />
       </TouchableOpacity>
@@ -39,23 +42,24 @@ class PageButton extends Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#2a2b2c',
-    borderRadius: 10,
-    height: 50,
-    marginBottom: 5,
+    borderRadius: 20,
+    height: 100,
+    marginBottom: 10,
   },
   viewContainer: {
     flexDirection: 'row',
   },
   innerTextContent: {
-    marginTop: 13,
-    marginLeft: 10,
-    fontSize: 16,
+    marginTop: 26,
+    marginLeft: 20,
+    fontSize: 32,
   },
   innerImage: {
-    marginLeft: 4,
-    marginTop: 13,
-    height: 18,
-    width: 18,
+    marginLeft: 8,
+    marginTop: 30,
+    height: 36,
+    width: 36,
+    resizeMode: 'stretch',
   },
 });
 
