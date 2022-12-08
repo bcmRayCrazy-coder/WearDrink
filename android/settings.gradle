@@ -12,3 +12,5 @@ if (settings.hasProperty("newArchEnabled") && settings.newArchEnabled == "true")
 
 include ':react-native-fs'
 project(':react-native-fs').projectDir = new File(settingsDir, '../node_modules/react-native-fs/android')
+include ':app', ':react-native-i18n'
+project(':react-native-i18n').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-i18n/android')

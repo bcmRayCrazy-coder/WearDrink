@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import {Text, View} from 'react-native';
+import i18n from '../../lib/i18n/index';
 import EssentialStyles from '../styles/essentialsStyle';
 
+console.log(i18n);
 class App extends Component {
+  t = i18n.t;
   constructor(props) {
     super(props);
     this.navigation = props.navigation;
