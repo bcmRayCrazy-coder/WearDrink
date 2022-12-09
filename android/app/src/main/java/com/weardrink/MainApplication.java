@@ -15,7 +15,6 @@ import com.weardrink.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
-import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -96,8 +95,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
                 new MainReactPackage(),
-                new RNFSPackage(),
-                new RNI18nPackage()
+                new RNFSPackage()
         );
     }
 }
