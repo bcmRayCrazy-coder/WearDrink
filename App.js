@@ -10,6 +10,7 @@ import SkinPage from './view/pages/SkinPage';
 
 import {log} from './lib/logger';
 import Header from './view/components/Header';
+import {connect} from 'react-redux';
 
 class App extends Component {
   Stack = createNativeStackNavigator();
@@ -52,4 +53,12 @@ class App extends Component {
   }
 }
 
-export default App;
+function select(store) {
+  console.log(store);
+  return {
+    water: store.water,
+    goal: store.goal.goal,
+  };
+}
+
+export default connect(select)(App);
