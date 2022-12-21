@@ -6,7 +6,7 @@ import MainPage from './view/pages/MainPage';
 import MenuPage from './view/pages/MenuPage';
 import SettingsPage from './view/pages/SettingsPage';
 import AboutPage from './view/pages/AboutPage';
-import SkinPage from './view/pages/SkinPage';
+// import SkinPage from './view/pages/SkinPage';
 
 import {log} from './lib/logger';
 import Header from './view/components/Header';
@@ -37,11 +37,11 @@ class App extends Component {
             component={SettingsPage}
             options={{header: props => <Header {...props} />}}
           />
-          <this.Stack.Screen
+          {/* <this.Stack.Screen
             name="Skin"
             component={SkinPage}
             options={{header: props => <Header {...props} />}}
-          />
+          /> */}
           <this.Stack.Screen
             name="About"
             component={AboutPage}

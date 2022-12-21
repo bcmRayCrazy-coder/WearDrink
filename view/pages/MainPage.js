@@ -25,6 +25,10 @@ class App extends PageComponent {
           </TouchableHighlight>
         </View>
         {/* Main View */}
+        <Text>
+          {this.state.water[this.state.water.length - 1].value} /{' '}
+          {this.state.goal[0].goal} ml
+        </Text>
       </View>
     );
   }
