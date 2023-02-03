@@ -6,8 +6,10 @@ import {store} from './lib/store/store';
 
 export default class AppIndex extends Component {
   render() {
-    <Provider store={store}>
-      <App />
-    </Provider>;
+    return (
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
   }
 }

@@ -25,9 +25,9 @@ class App extends PageComponent {
           </TouchableHighlight>
         </View>
         {/* Main View */}
-        <Text>
-          {this.state.water[this.state.water.length - 1].value} /{' '}
-          {this.state.goal[0].goal} ml
+        <Text style={[EssentialStyles.text, styles.waterText]}>
+          {(this.state.water[this.state.water.length - 1] || {value: 0}).value}{' '}
+          / {(this.state.goal[0] || {goal: 0}).goal} ml
         </Text>
       </View>
     );
@@ -48,6 +48,9 @@ const styles = StyleSheet.create({
     height: 32,
     width: 32,
     borderRadius: 16,
+  },
+  waterText: {
+    fontSize: 30,
   },
 });
 

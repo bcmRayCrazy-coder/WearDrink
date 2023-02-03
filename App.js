@@ -54,7 +54,7 @@ class App extends Component {
 }
 
 function select(store) {
-  console.log(store);
+  console.log('Store value ', store);
   return {
     water: store.water,
     goal: store.goal.goal,
