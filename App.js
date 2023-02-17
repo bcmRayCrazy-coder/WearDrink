@@ -6,6 +6,7 @@ import MainPage from './view/pages/MainPage';
 import MenuPage from './view/pages/MenuPage';
 import SettingsPage from './view/pages/SettingsPage';
 import AboutPage from './view/pages/AboutPage';
+import DrinkPage from './view/pages/DrinkPage';
 // import SkinPage from './view/pages/SkinPage';
 
 import {log} from './lib/logger';
@@ -46,6 +47,14 @@ class App extends Component {
             name="About"
             component={AboutPage}
             options={{header: props => <Header {...props} />}}
+          />
+
+          {/* 喝水界面 */}
+          <this.Stack.Screen
+            name="Drink"
+            component={DrinkPage}
+            options={{header: props => <Header {...props} />}}
+            screenOptions={{presentation: 'modal'}}
           />
         </this.Stack.Navigator>
       </NavigationContainer>

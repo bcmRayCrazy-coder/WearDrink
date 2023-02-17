@@ -5,13 +5,9 @@ import {SvgXml} from 'react-native-svg';
 import bottleSvgMaker from '../../lib/bottleSvgMaker';
 
 class Bottle extends Component {
-  onBottlePress() {
-    console.log('Bottle pressed');
-  }
   render() {
-    console.log(this.props, bottleSvgMaker(this.props.water, this.props.goal));
     return (
-      <TouchableOpacity onPress={this.onBottlePress}>
+      <TouchableOpacity onPress={this.props.onBottlePress}>
         <SvgXml
           xml={bottleSvgMaker(this.props.water, this.props.goal)}
           width="280px"

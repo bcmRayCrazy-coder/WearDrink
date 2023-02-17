@@ -35,6 +35,9 @@ class App extends PageComponent {
         <Bottle
           water={getDrinkInfo(this).water}
           goal={getDrinkInfo(this).goal}
+          onBottlePress={() => {
+            this.navigation.navigate('Drink');
+          }}
         />
       </View>
     );
