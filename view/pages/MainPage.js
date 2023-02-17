@@ -3,12 +3,14 @@ import {Image, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 
 import PageComponent from './PageComponent';
 import EssentialStyles from '../styles/essentialsStyle';
+import Bottle from '../components/Bottle';
+import getDrinkInfo from '../../lib/getDrinkInfo';
 
 class App extends PageComponent {
   render() {
     return (
       <View style={EssentialStyles.background}>
-        {/* Menu bar */}
+        {/* 顶部菜单栏 */}
         <View style={[EssentialStyles.sameRow, styles.menu]}>
           <Text style={EssentialStyles.title}>腕上水杯</Text>
           <TouchableHighlight
@@ -24,11 +26,16 @@ class App extends PageComponent {
             />
           </TouchableHighlight>
         </View>
-        {/* Main View */}
+        {/* 主页面*/}
+        {/* 喝水信息 */}
         <Text style={[EssentialStyles.text, styles.waterText]}>
-          {(this.state.water[this.state.water.length - 1] || {value: 0}).value}{' '}
-          / {(this.state.goal[0] || {goal: 0}).goal} ml
+          {getDrinkInfo(this).water} / {getDrinkInfo(this).goal} ml
         </Text>
+        {/* 水杯 */}
+        <Bottle
+          water={getDrinkInfo(this).water}
+          goal={getDrinkInfo(this).goal}
+        />
       </View>
     );
   }
