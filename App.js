@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+// import {addNavigationHelpers} from 'react-navigation';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -66,7 +67,7 @@ function select(store) {
   console.log('Store value ', store);
   return {
     water: store.water,
-    goal: store.goal.goal,
+    goal: store.goal,
   };
 }
 
