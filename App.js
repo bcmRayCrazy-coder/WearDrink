@@ -8,6 +8,7 @@ import MenuPage from './view/pages/MenuPage';
 import SettingsPage from './view/pages/SettingsPage';
 import AboutPage from './view/pages/AboutPage';
 import DrinkPage from './view/pages/DrinkPage';
+import SetGoalPage from './view/pages/SetGoalPage';
 // import SkinPage from './view/pages/SkinPage';
 
 import {log} from './lib/logger';
@@ -54,6 +55,13 @@ class App extends Component {
           <this.Stack.Screen
             name="Drink"
             component={DrinkPage}
+            options={{header: props => <Header {...props} />}}
+            screenOptions={{presentation: 'modal'}}
+          />
+          {/* 设置目标界面 */}
+          <this.Stack.Screen
+            name="SetGoal"
+            component={SetGoalPage}
             options={{header: props => <Header {...props} />}}
             screenOptions={{presentation: 'modal'}}
           />
