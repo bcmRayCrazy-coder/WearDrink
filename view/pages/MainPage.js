@@ -5,8 +5,13 @@ import PageComponent from './PageComponent';
 import EssentialStyles from '../styles/essentialsStyle';
 import Bottle from '../components/Bottle';
 import getDrinkInfo from '../../lib/getDrinkInfo';
+import initFlipperClientPlugin from '../../lib/flipper/main';
 
 class App extends PageComponent {
+  componentDidMount() {
+    console.log(this.state);
+    initFlipperClientPlugin(this.state);
+  }
   render() {
     return (
       <View style={EssentialStyles.background}>

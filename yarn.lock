@@ -5645,6 +5645,11 @@ react-native-codegen@^0.70.6:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
+react-native-flipper@^0.182.0:
+  version "0.182.0"
+  resolved "https://registry.npmmirror.com/react-native-flipper/-/react-native-flipper-0.182.0.tgz#7a2a5569715a9e571019e84ee2de4f72f4c5a4db"
+  integrity sha512-AoLVduVWluY99XDPznn05sXRyrE1OeEkc4aQCxDKgQYfCdf82aNOH+hwGO/CKcGEiC3T9oBzeOofqwo+Og4eWA==
+
 react-native-fs@^2.20.0:
   version "2.20.0"
   resolved "https://registry.npmmirror.com/react-native-fs/-/react-native-fs-2.20.0.tgz#05a9362b473bfc0910772c0acbb73a78dbc810f6"
