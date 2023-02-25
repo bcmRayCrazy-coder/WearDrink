@@ -9,7 +9,7 @@ class App extends Component {
     this.navigation = props.navigation;
     this.state = store.getState();
     store.subscribe(() => {
-      this.setState(store.getState);
+      this.setState(store.getState());
     });
   }
   render() {

@@ -14,6 +14,10 @@ import SetGoalPage from './view/pages/SetGoalPage';
 import {log} from './lib/logger';
 import Header from './view/components/Header';
 import {connect} from 'react-redux';
+import {setCurrentDate, setGoal, setWater} from './lib/store/action';
+import {getState, saveState} from './lib/store/save';
+import getDateString from './lib/getDateString';
+import { store } from './lib/store/store';
 
 class App extends Component {
   Stack = createNativeStackNavigator();
@@ -21,6 +25,27 @@ class App extends Component {
     super(props);
     log('WearDrink app started!');
   }
+
+  componentDidMount() {
+    store.subscribe(() => {
+      // 保存状态
+      saveState(store.getState());
+      console.log('Saved state');
+      getState().then(console.log);
+    })
+    // 恢复上次状态
+    getState().then(data => {
+      console.log(data, getDateString());
+      this.props.dispatch(setWater(data.water));
+      this.props.dispatch(setGoal(data.goal));
+      // 若是新的一天就清零
+      if (data.lastDate !== getDateString()) {
+        this.props.dispatch(setWater(0));
+        this.props.dispatch(setCurrentDate());
+      }
+    });
+  }
+
   render() {
     return (
       <NavigationContainer>
@@ -76,6 +101,7 @@ function select(store) {
   return {
     water: store.water,
     goal: store.goal,
+    lastDate: store.lastDate,
   };
 }
 
