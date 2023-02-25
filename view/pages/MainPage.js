@@ -9,7 +9,6 @@ import initFlipperClientPlugin from '../../lib/flipper/main';
 
 class App extends PageComponent {
   componentDidMount() {
-    console.log(this.state);
     initFlipperClientPlugin(this.state);
   }
   render() {

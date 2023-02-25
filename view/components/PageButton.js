@@ -27,7 +27,7 @@ class PageButton extends Component {
     return (
       <TouchableOpacity
         activeOpacity={0.8}
-        style={styles.container}
+        style={ES.cardBtnContainer}
         onPress={() => {
           this.props.onPress
             ? this.props.onPress()
@@ -40,12 +40,6 @@ class PageButton extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#2a2b2c',
-    borderRadius: 20,
-    height: 100,
-    marginBottom: 10,
-  },
   viewContainer: {
     flexDirection: 'row',
   },

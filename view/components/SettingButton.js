@@ -25,7 +25,7 @@ class SettingButton extends Component {
     return (
       <TouchableOpacity
         activeOpacity={0.8}
-        style={styles.container}
+        style={ES.cardBtnContainer}
         onPress={() => {
           this.props.onPress
             ? this.props.onPress()
@@ -38,14 +38,6 @@ class SettingButton extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#2a2b2c',
-    borderRadius: 20,
-    height: 100,
-    marginBottom: 10,
-    paddingLeft: 10,
-    paddingRight: 10,
-  },
   title: {
     fontSize: 32,
     marginTop: 16,

@@ -13,8 +13,8 @@ class App extends PageComponent {
         <Text style={EssentialStyles.title}>设置</Text>
         <ScrollView>
           <SettingButton
-            title="喝水量目标"
-            description={'114 ml'}
+            title="喝水目标"
+            description={this.state.goal + ' ml'}
             onPress={() => {
               this.navigation.navigate('SetGoal');
             }}

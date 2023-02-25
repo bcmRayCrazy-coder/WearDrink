@@ -23,5 +23,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  cardBtnContainer: {
+    backgroundColor: '#2a2b2c',
+    borderRadius: 20,
+    height: 100,
+    marginBottom: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
 });
 export default styles;
